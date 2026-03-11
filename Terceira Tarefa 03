@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite a sua nota: ");
+        
+        if (scanner.hasNextInt()) {
+            int nota = scanner.nextInt();
+            
+            if (nota >=90) {
+                System.out.println(" A sua nota é Excelente. ");
+                
+            } else if (nota >=70) {
+                System.out.println("A sua nota é Bom. ");
+            } else if (nota >=60) {
+                System.out.println("A sua nota é Regular. ");
+            } else if (nota >=50) {
+                System.out.println("Reprovado. ");
+            }
+        }
+        scanner.close();
+    }    
+}
