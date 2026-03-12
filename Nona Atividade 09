@@ -1,0 +1,64 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        double precoHamburguer = 15.0;
+        double precoPizza = 20.0;
+        double precoSalada = 12.0;
+        double precoRefrigerante = 5.0;
+        
+        double valorTotal = 0.0;
+        int opcao = 0;
+        int quantidade = 0;
+
+        System.out.println("--- CARDÁPIO ---");
+        System.out.println("1 – Hambúrguer (R$15)");
+        System.out.println("2 – Pizza (R$20)");
+        System.out.println("3 – Salada (R$12)");
+        System.out.println("4 – Refrigerante (R$5)");
+        System.out.println("0 – Finalizar Pedido");
+        System.out.print("Escolha uma opção: ");
+        
+        opcao = scanner.nextInt();
+        
+        if (opcao >= 1 && opcao <= 4) {
+            System.out.print("Digite a quantidade: ");
+            quantidade = scanner.nextInt();
+            
+            switch (opcao) {
+                case 1:
+                    valorTotal = precoHamburguer * quantidade;
+                    System.out.println("Item: Hambúrguer");
+                    break;
+                case 2:
+                    valorTotal = precoPizza * quantidade;
+                    System.out.println("Item: Pizza");
+                    break;
+                case 3:
+                    valorTotal = precoSalada * quantidade;
+                    System.out.println("Item: Salada");
+                    break;
+                case 4:
+                    valorTotal = precoRefrigerante * quantidade;
+                    System.out.println("Item: Refrigerante");
+                    break;
+                default:
+                    System.out.println("Opção inválida.");
+                    break;
+            }
+            
+            System.out.println("Quantidade: " + quantidade);
+            System.out.printf("Valor total do pedido: R$%.2f\n", valorTotal);
+            
+        } else if (opcao != 0) {
+            System.out.println("Opção inválida.");
+        } else {
+            System.out.println("Pedido finalizado sem itens.");
+        }
+
+        scanner.close();
+    }
+}
