@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("--- Sistema de Verificação de Entrada ---");
+
+        System.out.print("Digite a sua idade: ");
+        int idade = scanner.nextInt();
+
+        
+        if (idade >= 18) {
+         
+            System.out.print("Possui ingresso? (Sim/Não): ");
+            char temIngresso = scanner.next().toUpperCase().charAt(0);
+
+            if (temIngresso == 'S') {
+                System.out.println("Entrada permitida! Seja bem-vindo(a).");
+            } else if (temIngresso == 'N') {
+                System.out.println("Entrada negada: É necessário adquirir um ingresso.");
+            } else {
+                System.out.println("Opção inválida. Digite Sim ou Não.");
+            }
+        } else {
+ 
+            System.out.println("Entrada negada: Pessoas com menos de 18 anos não podem entrar.");
+        }
+
+        scanner.close();
+    }
+}
